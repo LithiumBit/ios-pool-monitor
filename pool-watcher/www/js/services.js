@@ -8,7 +8,7 @@ angular.module('tc.services', [])
       getStats: function( pool_api_url, wallet_address ) {
           var request_url = atob(pool_api_url) + 'stats_address?address=' + wallet_address + '&longpoll=longpoll';
           
-          return $http.get(request_url, { timeout: 10000 }).then(function(result) {
+          return $http.get(request_url, { timeout: 15000 }).then(function(result) {
               return result.data;
           }).catch(function(rejected) {
             var stats = {"error":"pool api down"};
@@ -24,7 +24,7 @@ angular.module('tc.services', [])
       getStats: function( pool_api_url ) {
           var request_url = atob(pool_api_url) + 'live_stats';
           
-          return $http.get(request_url, { timeout: 10000 }).then(function(result) {
+          return $http.get(request_url, { timeout: 15000 }).then(function(result) {
               return result.data;
           }).catch(function(rejected) {
             var stats = {"error":"pool api down"};
