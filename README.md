@@ -39,9 +39,9 @@ Some basics to get up and running to build and test on an iOS device.
  - Apple iOS Developer Account
  - Node.js ([nodejs.org/en/](https://nodejs.org/en/))
  - npm (if you installed Node.js using an .msi , .exe , .dmg .pkg , .deb or using a package installer like apt-get, yum or brew, then you'll have both node and npm)
- - cordova `sudo npm install -g cordova`
- - ios-deploy `npm install -g ios-deploy`
- - cocoapods `sudo gem install cocoapods`
+ - Apache Cordova (also commonly referred to as PhoneGap) `sudo npm install -g cordova`
+ - ios-deploy Node.js module `npm install -g ios-deploy`
+ - CocoaPods `sudo gem install cocoapods`
 
 You can run the following to be sure you have the necessary prerequisites to build the project for iOS:
 ```
