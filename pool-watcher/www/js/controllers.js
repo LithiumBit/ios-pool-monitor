@@ -111,7 +111,7 @@ angular.module('tc.controllers', [])
             
             if(stats.error == "pool api down")
             {
-                $scope.custom_error = "The " + poolInfo[0] + " API appears to be down.";
+                $scope.custom_error = "No internet connection or the " + poolInfo[0] + " API is down.";
             }
         }
         else
@@ -176,7 +176,7 @@ angular.module('tc.controllers', [])
             
             if(stats.error == "pool api down")
             {
-                $scope.custom_error = "The " + poolInfo[0] + " API appears to be down.";
+                $scope.custom_error = "No internet connection or the " + poolInfo[0] + " API is down.";
             }
         }
         else
@@ -234,7 +234,7 @@ angular.module('tc.controllers', [])
             
             if(stats.error == "pool api down")
             {
-                $scope.custom_error = "The " + poolInfo[0] + " API appears to be down.";
+                $scope.custom_error = "No internet connection or the " + poolInfo[0] + " API is down.";
             }
         }
         else
