@@ -10,6 +10,8 @@ Features:
 * Safe. All APIs used are safe and verified by multiple developers and miners.
 * Open source. Pool Monitor is free and open source, enabling anyone to verify its security by auditing the code.
 
+[![Available on the App Store](https://devimages-cdn.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg)](https://itunes.apple.com/us/app/turtlecoin-mining-pool-monitor/id1353746147?ls=1&mt=8)
+
 ## List of Pools Supported
 Currently the app supports the following pools:
 
