@@ -46,5 +46,5 @@
         <icon gap:platform="ios" height="1024" src="res/icon/ios/AppIcon-1024@1x.png" width="1024" />
     </platform>
     <plugin name="cordova-plugin-statusbar" spec="^2.4.1" />
-    <engine name="ios" spec="^4.5.4" />
+    <engine name="ios" spec="~4.5.4" />
 </widget>
