@@ -87,7 +87,7 @@ angular.module('tc.controllers', [])
     });
 }])
 
-.controller('DashboardCtrl', ['$scope', '$location', '$route', '$timeout', '$filter', 'minerService', function DashboardCtrl($scope, $location, $route, $timeout, $filter,  minerService) {
+.controller('DashboardCtrl', ['$scope', '$location', '$route', '$timeout', '$filter', 'minerService', 'hashChartService', function DashboardCtrl($scope, $location, $route, $timeout, $filter, minerService, hashChartService) {
     
     $scope.getClass = function (path) {
         return ($location.path().substr(0, path.length) === path) ? 'active' : '';
@@ -117,85 +117,7 @@ angular.module('tc.controllers', [])
             $scope.last_share = $filter('timeAgo')(stats.stats.lastShare);
             $scope.hashrate_chart = stats.charts.hashrate;
             
-            var hashes = [];
-            
-            angular.forEach(stats.charts.hashrate, function(value, key) {
-                
-                if(stats.charts.hashrate.length > 30)
-                {
-                    // API gives us the last 45 data points by default
-                    // only show the most recent 15
-                    if(key >= 30)
-                    {
-                        var data_point = {
-                            name: stats.charts.hashrate[key][0],
-                            y: Number(stats.charts.hashrate[key][1])
-                        }
-                        hashes.push(data_point);
-                    }
-                }
-                else
-                {
-                    var data_point = {
-                        name: stats.charts.hashrate[key][0],
-                        y: Number(stats.charts.hashrate[key][1])
-                    }
-                    hashes.push(data_point);
-                }
-            });
-            
-            setTimeout(function() {
-                $('#chart').highcharts({
-                    chart: {
-                        type: "areaspline",
-                        backgroundColor: '#F9F9F9'
-                    },
-                    legend: {
-                        enabled: false
-                    },
-                    credits: {
-                        enabled: false
-                    },
-                    title: {
-                        text: '',
-                        style: {
-                            'display':'none'
-                        }
-                    },
-                    yAxis: {
-                        labels: {
-                          style: {
-                              fontFamily: '"Roboto", Helvetica, Arial',
-                              color: '#5d5d5d'
-                          }
-                        },
-                        title: {
-                            text: ''
-                        },
-                        gridLineColor: '#5d5d5d'
-                    },
-                    xAxis: {
-                        labels: {
-                          enabled: false  
-                        },
-                        lineWidth: 0,
-                        minorGridLineWidth: 0,
-                        lineColor: 'transparent',
-                        minorTickLength: 0,
-                        tickLength: 0
-                    },
-                    tooltip: {
-                        formatter: function(){
-                            return $filter('timeAgo')(this.point.name) + '<br>' + $filter('hashrateFormat')(this.point.y) + '/sec';
-                        },
-                        shadow: false
-                    },
-                    series: [{
-                        color: '#5d5d5d',
-                        data: hashes
-                    }]
-                });
-            }, 500);
+            hashChartService.doChart(stats.charts.hashrate);
         }
         
         $scope.loading = false;
@@ -222,7 +144,7 @@ angular.module('tc.controllers', [])
     });
 }])
 
-.controller('PoolCtrl', ['$scope', '$location', '$route', '$timeout', '$filter', 'poolService', function PoolCtrl($scope, $location, $route, $timeout, $filter,  poolService) {
+.controller('PoolCtrl', ['$scope', '$location', '$route', '$timeout', '$filter', 'poolService', 'hashChartService', function PoolCtrl($scope, $location, $route, $timeout, $filter, poolService, hashChartService) {
     
     $scope.getClass = function (path) {
         return ($location.path().substr(0, path.length) === path) ? 'active' : '';
@@ -247,85 +169,7 @@ angular.module('tc.controllers', [])
         $scope.block_reward = $filter('formatTRTL')(stats.network.reward);
         $scope.pool_hashrate = $filter('hashrateFormat')(stats.pool.hashrate);
         
-        var hashes = [];
-        
-        angular.forEach(stats.charts.hashrate, function(value, key) {
-            
-            if(stats.charts.hashrate.length > 30)
-            {
-                // API gives us the last 48 data points by default
-                // only show the most recent 15
-                if(key >= 33)
-                {
-                    var data_point = {
-                        name: stats.charts.hashrate[key][0],
-                        y: Number(stats.charts.hashrate[key][1])
-                    }
-                    hashes.push(data_point);
-                }
-            }
-            else
-            {
-                var data_point = {
-                    name: stats.charts.hashrate[key][0],
-                    y: Number(stats.charts.hashrate[key][1])
-                }
-                hashes.push(data_point);   
-            }
-        });
-        
-        setTimeout(function() {
-            $('#chart').highcharts({
-                chart: {
-                    type: "areaspline",
-                    backgroundColor: '#F9F9F9'
-                },
-                legend: {
-                    enabled: false
-                },
-                credits: {
-                    enabled: false
-                },
-                title: {
-                    text: '',
-                    style: {
-                        'display':'none'
-                    }
-                },
-                yAxis: {
-                    labels: {
-                      style: {
-                          fontFamily: '"Roboto", Helvetica, Arial',
-                          color: '#5d5d5d'
-                      }
-                    },
-                    title: {
-                        text: ''
-                    },
-                    gridLineColor: '#5d5d5d'
-                },
-                xAxis: {
-                    labels: {
-                      enabled: false  
-                    },
-                    lineWidth: 0,
-                    minorGridLineWidth: 0,
-                    lineColor: 'transparent',
-                    minorTickLength: 0,
-                    tickLength: 0
-                },
-                tooltip: {
-                    formatter: function(){
-                        return $filter('timeAgo')(this.point.name) + '<br>' + $filter('hashrateFormat')(this.point.y) + '/sec';
-                    },
-                    shadow: false
-                },
-                series: [{
-                    color: '#5d5d5d',
-                    data: hashes
-                }]
-            });
-        }, 500);
+        hashChartService.doChart(stats.charts.hashrate);
         
         var $context_menu = $('#context_menu');
         $context_menu.hide();
