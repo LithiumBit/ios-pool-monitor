@@ -30,7 +30,7 @@ Currently the app supports the following pools:
 
 ## Changelog
 
-[See here.](https://github.com/derp-derp-derp/Turtle-Coin-Pool-Watcher/blob/master/CHANGELOG.md)
+[See here.](https://github.com/turtlecoin/ios-pool-monitor/blob/master/CHANGELOG.md)
 
 -------------------------
 
@@ -88,7 +88,7 @@ cordova prepare
 
 ## Contributing
 
-Please read [CONTRIBUTING](https://github.com/derp-derp-derp/Turtle-Coin-Pool-Watcher/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
+Please read [CONTRIBUTING](https://github.com/turtlecoin/ios-pool-monitor/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
 
 ## Author
 
@@ -100,7 +100,7 @@ If you found the app useful, TRTL is always greatly appreciated:
 
 ## License
 
-This project is licensed under the GNU LGPL - see the [LICENSE](https://github.com/derp-derp-derp/Turtle-Coin-Pool-Watcher/blob/master/LICENSE.md) file for details.
+This project is licensed under the GNU LGPL - see the [LICENSE](https://github.com/turtlecoin/ios-pool-monitor/blob/master/LICENSE.md) file for details.
 
 ## Acknowledgments and Thanks
 
