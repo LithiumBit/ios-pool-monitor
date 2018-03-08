@@ -23,23 +23,33 @@
 
 <div class="content_section" ng-hide="loading">
     
-    <div class="long_address">
-        <strong>Up to 30 Most Recent Payouts</strong><br>
+    <div ng-show="has_results">
+        
+        <div class="long_address">
+            <strong>Up to 30 Most Recent Payouts</strong><br>
+        </div>
+    
+        <div class="content_card long_address" ng-repeat="payment in miner_payments" ng-show="miner_payments.length >= 1">
+            <div>
+                <div style="float: left; width: 45%; text-align: right;">
+                    {{payment.amount}} TRTL
+                </div>
+                <div style="float: right; width: 45%; text-align: left;">
+                    {{payment.time}}
+                </div>
+            </div><br>
+            <a ng-href="https://turtle-coin.com/?hash={{payment.hash}}#blockchain_transaction" target="_blank">{{payment.hash}}</a>
+        </div>
+        
+        <div class="content_card" ng-show="miner_payments.length < 1">
+            You have no payments yet from this pool.
+        </div>
+    
     </div>
     
-    <div class="content_card long_address" ng-repeat="payment in miner_payments" ng-show="miner_payments.length >= 1">
-        <div>
-            <div style="float: left; width: 45%; text-align: right;">
-                {{payment.amount}} TRTL
-            </div>
-            <div style="float: right; width: 45%; text-align: left;">
-                {{payment.time}}
-            </div>
-        </div><br>
-        <a ng-href="https://turtle-coin.com/?hash={{payment.hash}}#blockchain_transaction" target="_blank">{{payment.hash}}</a>
-    </div>
-    <div class="content_card" ng-show="miner_payments.length < 1">
-        You have no payments yet from this pool.
+    <div class="content_card" ng-hide="has_results" style="margin-top: 20px;">
+        {{custom_error}}<br>
+        <a href="#!/home?reset=address">Try a different pool?</a>
     </div>
 
 </div>

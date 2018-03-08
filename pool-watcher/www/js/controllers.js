@@ -100,12 +100,19 @@ angular.module('tc.controllers', [])
     $scope.pool_name = poolInfo[0];
     $scope.pool_api_url = btoa(poolInfo[1]);
     $scope.wallet_address = $route.current.params.wallet_address;
+    $scope.custom_error = '';
     $scope.loading = true;
     
     minerService.getStats( $scope.pool_api_url, $scope.wallet_address ).then(function(stats) {
-        if(stats.error == "not found")
+        if(stats.error == "not found" || stats.error == "pool api down")
         {
             $scope.has_results = false;
+            $scope.custom_error = "No data returned by pool for that wallet address.";
+            
+            if(stats.error == "pool api down")
+            {
+                $scope.custom_error = "The " + poolInfo[0] + " API appears to be down.";
+            }
         }
         else
         {
@@ -157,19 +164,35 @@ angular.module('tc.controllers', [])
     $scope.pool_name = poolInfo[0];
     $scope.pool_api_url = btoa(poolInfo[1]);
     $scope.wallet_address = $route.current.params.wallet_address;
+    $scope.custom_error = '';
     $scope.loading = true;
     
     poolService.getStats( $scope.pool_api_url ).then(function(stats) {
-
-        $scope.pool_stats = stats.pool;
-        $scope.pool_config = stats.config;
-        $scope.network_stats = stats.network;
-        $scope.network_last_updated = $filter('timeAgo')(stats.network.timestamp);
-        $scope.min_payment = $filter('formatTRTL')(stats.config.minPaymentThreshold);
-        $scope.block_reward = $filter('formatTRTL')(stats.network.reward);
-        $scope.pool_hashrate = $filter('hashrateFormat')(stats.pool.hashrate);
         
-        hashChartService.doChart(stats.charts.hashrate);
+        if(stats.error == "not found" || stats.error == "pool api down")
+        {
+            $scope.has_results = false;
+            $scope.custom_error = "No data returned by the pool.";
+            
+            if(stats.error == "pool api down")
+            {
+                $scope.custom_error = "The " + poolInfo[0] + " API appears to be down.";
+            }
+        }
+        else
+        {
+            $scope.has_results = true;
+
+            $scope.pool_stats = stats.pool;
+            $scope.pool_config = stats.config;
+            $scope.network_stats = stats.network;
+            $scope.network_last_updated = $filter('timeAgo')(stats.network.timestamp);
+            $scope.min_payment = $filter('formatTRTL')(stats.config.minPaymentThreshold);
+            $scope.block_reward = $filter('formatTRTL')(stats.network.reward);
+            $scope.pool_hashrate = $filter('hashrateFormat')(stats.pool.hashrate);
+            
+            hashChartService.doChart(stats.charts.hashrate);
+        }
         
         var $context_menu = $('#context_menu');
         $context_menu.hide();
@@ -199,30 +222,46 @@ angular.module('tc.controllers', [])
     $scope.pool_name = poolInfo[0];
     $scope.pool_api_url = btoa(poolInfo[1]);
     $scope.wallet_address = $route.current.params.wallet_address;
+    $scope.custom_error = '';
     $scope.loading = true;
     
     minerService.getStats( $scope.pool_api_url, $scope.wallet_address ).then(function(stats) {
         
-        var parsePayment = function (time, serializedPayment){
-            var parts = serializedPayment.split(':');
-            return {
-                time: $filter('timeAgo')(parseInt(time)),
-                hash: parts[0],
-                amount: (Number(parts[1]) / 100).toFixed(2)
-            };
-        };
-        
-        var minerPayments = [];
-        
-        if(stats.payments)
+        if(stats.error == "not found" || stats.error == "pool api down")
         {
-            for (var i = 0; i < stats.payments.length; i += 2){
-                var payment = parsePayment(stats.payments[i + 1], stats.payments[i]);
-                minerPayments.push(payment);
+            $scope.has_results = false;
+            $scope.custom_error = "No data returned by pool for that wallet address.";
+            
+            if(stats.error == "pool api down")
+            {
+                $scope.custom_error = "The " + poolInfo[0] + " API appears to be down.";
             }
         }
+        else
+        {
+            $scope.has_results = true;
         
-        $scope.miner_payments = minerPayments;
+            var parsePayment = function (time, serializedPayment){
+                var parts = serializedPayment.split(':');
+                return {
+                    time: $filter('timeAgo')(parseInt(time)),
+                    hash: parts[0],
+                    amount: (Number(parts[1]) / 100).toFixed(2)
+                };
+            };
+            
+            var minerPayments = [];
+            
+            if(stats.payments)
+            {
+                for (var i = 0; i < stats.payments.length; i += 2){
+                    var payment = parsePayment(stats.payments[i + 1], stats.payments[i]);
+                    minerPayments.push(payment);
+                }
+            }
+            
+            $scope.miner_payments = minerPayments;
+        }
         
         var $context_menu = $('#context_menu');
         $context_menu.hide();

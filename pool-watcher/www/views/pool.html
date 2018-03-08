@@ -23,78 +23,87 @@
 
 <div class="content_section" ng-hide="loading">
     
-    <div class="long_address">
-        <strong>Pool</strong><br>
-        {{pool_name}}
-    </div>
+    <div ng-show="has_results">
+        
+        <div class="long_address">
+            <strong>Pool</strong><br>
+            {{pool_name}}
+        </div>
     
-    <div class="grid">
-        <div class="content_card col-1-2">
-            <strong>Pool Fee</strong><br>
-            {{pool_config.fee}}%
+        <div class="grid">
+            <div class="content_card col-1-2">
+                <strong>Pool Fee</strong><br>
+                {{pool_config.fee}}%
+            </div>
+        
+            <div class="content_card col-1-2">
+                <strong>Payment Threshold</strong><br>
+                {{min_payment}} TRTL
+            </div>
         </div>
-
-        <div class="content_card col-1-2">
-            <strong>Payment Threshold</strong><br>
-            {{min_payment}} TRTL
+        
+        <div class="grid">
+            <div class="content_card col-1-2">
+                <strong>Miners</strong><br>
+                {{pool_stats.miners}}
+            </div>
+        
+            <div class="content_card col-1-2">
+                <strong>Pool Hashrate</strong><br>
+                {{pool_hashrate}}/sec
+            </div>
         </div>
-    </div>
-    
-    <div class="grid">
-        <div class="content_card col-1-2">
-            <strong>Miners</strong><br>
-            {{pool_stats.miners}}
+        
+        <div class="grid">
+            <div class="content_card col-1-2">
+                <strong>Miners Paid</strong><br>
+                {{pool_stats.totalMinersPaid}}
+            </div>
+        
+            <div class="content_card col-1-2">
+                <strong>Total Payments</strong><br>
+                {{pool_stats.totalPayments}}
+            </div>
         </div>
-
-        <div class="content_card col-1-2">
+        
+        <div class="long_address">
+            <strong>Network</strong>
+        </div>
+        
+        <div class="grid">
+            <div class="content_card col-1-2">
+                <strong>Difficulty</strong><br>
+                {{network_stats.difficulty}}
+            </div>
+        
+            <div class="content_card col-1-2">
+                <strong>Height</strong><br>
+                {{network_stats.height}}
+            </div>
+        </div>
+        
+        <div class="grid">
+            <div class="content_card col-1-2">
+                <strong>Reward</strong><br>
+                {{block_reward}}
+            </div>
+        
+            <div class="content_card col-1-2">
+                <strong>Last Updated</strong><br>
+                {{network_last_updated}}
+            </div>
+        </div>
+        
+        <div class="content_card">
             <strong>Pool Hashrate</strong><br>
-            {{pool_hashrate}}/sec
+            <div id="chart"></div>
         </div>
+    
     </div>
     
-    <div class="grid">
-        <div class="content_card col-1-2">
-            <strong>Miners Paid</strong><br>
-            {{pool_stats.totalMinersPaid}}
-        </div>
-
-        <div class="content_card col-1-2">
-            <strong>Total Payments</strong><br>
-            {{pool_stats.totalPayments}}
-        </div>
-    </div>
-    
-    <div class="long_address">
-        <strong>Network</strong>
-    </div>
-    
-    <div class="grid">
-        <div class="content_card col-1-2">
-            <strong>Difficulty</strong><br>
-            {{network_stats.difficulty}}
-        </div>
-
-        <div class="content_card col-1-2">
-            <strong>Height</strong><br>
-            {{network_stats.height}}
-        </div>
-    </div>
-    
-    <div class="grid">
-        <div class="content_card col-1-2">
-            <strong>Reward</strong><br>
-            {{block_reward}}
-        </div>
-
-        <div class="content_card col-1-2">
-            <strong>Last Updated</strong><br>
-            {{network_last_updated}}
-        </div>
-    </div>
-    
-    <div class="content_card">
-        <strong>Pool Hashrate</strong><br>
-        <div id="chart"></div>
+    <div class="content_card" ng-hide="has_results" style="margin-top: 20px;">
+        {{custom_error}}<br>
+        <a href="#!/home?reset=address">Try a different pool?</a>
     </div>
 
 </div>

@@ -6,8 +6,13 @@ angular.module('tc.services', [])
    
    return {
       getStats: function( pool_api_url, wallet_address ) {
-          return $http.get(atob(pool_api_url) + 'stats_address?address=' + wallet_address + '&longpoll=longpoll', { cache: true }).then(function(result) {
+          var request_url = atob(pool_api_url) + 'stats_address?address=' + wallet_address + '&longpoll=longpoll';
+          
+          return $http.get(request_url, { timeout: 10000 }).then(function(result) {
               return result.data;
+          }).catch(function(rejected) {
+            var stats = {"error":"pool api down"};
+            return stats;
           });
       }
    }
@@ -17,8 +22,13 @@ angular.module('tc.services', [])
    
    return {
       getStats: function( pool_api_url ) {
-          return $http.get(atob(pool_api_url) + 'live_stats', { cache: true }).then(function(result) {
+          var request_url = atob(pool_api_url) + 'live_stats';
+          
+          return $http.get(request_url, { timeout: 10000 }).then(function(result) {
               return result.data;
+          }).catch(function(rejected) {
+            var stats = {"error":"pool api down"};
+            return stats;
           });
       }
    }

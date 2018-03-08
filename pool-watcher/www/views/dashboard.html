@@ -25,71 +25,71 @@
     
     <div ng-show="has_results">
     
-    <div class="long_address">
-        <strong>Miner</strong><br>
-        {{wallet_address}}
-    </div>
-    
-    <div class="content_card">
-        <strong>Hash Rate</strong><br>
-        <span ng-show="miner_stats.hashrate.length > 1">
-            {{miner_stats.hashrate}}/sec
-        </span>
-        <span ng-show="!miner_stats.hashrate">
-            No active hashrate reported.
-        </span>
-    </div>
-    
-    <div class="content_card">
-        <strong>Paid</strong><br>
-        <span ng-show="miner_stats.paid > 1">
-            {{paid_formatted}} TRTL
-        </span>
-        <span ng-show="!miner_stats.paid">
-            No payments received from this pool.
-        </span>
-    </div>
-    
-    <div class="content_card">
-        <strong>Balance</strong><br>
-        <span ng-show="miner_stats.balance > 1">
-            {{balance_formatted}} TRTL
-        </span>
-        <span ng-show="!miner_stats.balance">
-            No balance for this pool.
-        </span>
-    </div>
-    
-    <div class="content_card">
-        <strong>Last Share</strong><br>
-        <span ng-show="miner_stats.lastShare > 1">
-            {{last_share}}
-        </span>
-        <span ng-show="!miner_stats.lastShare">
-            No shares submitted to this pool.
-        </span>
-    </div>
-    
-    <div class="content_card">
-        <strong>Submitted Hashes</strong><br>
-        <span ng-show="miner_stats.hashes > 1">
-            {{miner_stats.hashes}}
-        </span>
-        <span ng-show="!miner_stats.hashes">
-            No hashes submitted to this pool.
-        </span>
-    </div>
-    
-    <div class="content_card" ng-show="hashrate_chart.length > 0">
-        <strong>Hashrate</strong><br>
-        <div id="chart"></div>
-    </div>
+        <div class="long_address">
+            <strong>Miner</strong><br>
+            {{wallet_address}}
+        </div>
+        
+        <div class="content_card">
+            <strong>Hash Rate</strong><br>
+            <span ng-show="miner_stats.hashrate.length > 1">
+                {{miner_stats.hashrate}}/sec
+            </span>
+            <span ng-show="!miner_stats.hashrate">
+                No active hashrate reported.
+            </span>
+        </div>
+        
+        <div class="content_card">
+            <strong>Paid</strong><br>
+            <span ng-show="miner_stats.paid > 1">
+                {{paid_formatted}} TRTL
+            </span>
+            <span ng-show="!miner_stats.paid">
+                No payments received from this pool.
+            </span>
+        </div>
+        
+        <div class="content_card">
+            <strong>Balance</strong><br>
+            <span ng-show="miner_stats.balance > 1">
+                {{balance_formatted}} TRTL
+            </span>
+            <span ng-show="!miner_stats.balance">
+                No balance for this pool.
+            </span>
+        </div>
+        
+        <div class="content_card">
+            <strong>Last Share</strong><br>
+            <span ng-show="miner_stats.lastShare > 1">
+                {{last_share}}
+            </span>
+            <span ng-show="!miner_stats.lastShare">
+                No shares submitted to this pool.
+            </span>
+        </div>
+        
+        <div class="content_card">
+            <strong>Submitted Hashes</strong><br>
+            <span ng-show="miner_stats.hashes > 1">
+                {{miner_stats.hashes}}
+            </span>
+            <span ng-show="!miner_stats.hashes">
+                No hashes submitted to this pool.
+            </span>
+        </div>
+        
+        <div class="content_card" ng-show="hashrate_chart.length > 0">
+            <strong>Hashrate</strong><br>
+            <div id="chart"></div>
+        </div>
     
     </div>
     
     <div class="content_card" ng-hide="has_results" style="margin-top: 20px;">
-        No data returned by pool for that wallet address.<br>
-        <a href="#!/home?reset=address">Try again?</a>
+        {{custom_error}}<br>
+        <a href="#!/home?reset=address">Try a different pool?</a>
     </div>
 
 </div>
