@@ -32,11 +32,13 @@ Currently the app supports the following pools:
 
 # Build Steps
 
+Some basics to get up and running to build and test on an iOS device.
+
 ## Prerequisites
  - Apple Xcode
  - Apple iOS Developer Account
- - node ([nodejs.org/en/](https://nodejs.org/en/))
- - npm (if you installed node using an .msi , .exe , .dmg .pkg , .deb or using a package installer like apt-get , yum or brew, then you'll have both node and npm)
+ - Node.js ([nodejs.org/en/](https://nodejs.org/en/))
+ - npm (if you installed Node.js using an .msi , .exe , .dmg .pkg , .deb or using a package installer like apt-get, yum or brew, then you'll have both node and npm)
  - cordova `sudo npm install -g cordova`
  - ios-deploy `npm install -g ios-deploy`
  - cocoapods `sudo gem install cocoapods`
