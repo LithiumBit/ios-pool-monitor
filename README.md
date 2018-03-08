@@ -28,10 +28,11 @@ Currently the app supports the following pools:
 * [sewer.ninja](http://sewer.ninja)
 * [turtlecoinpool.ml](http://turtlecoinpool.ml)
 
-# Build Steps
-=============
+-------------------------
 
-##Prerequisites
+# Build Steps
+
+## Prerequisites
  - Apple Xcode
  - Apple iOS Developer Account
  - node ([nodejs.org/en/](https://nodejs.org/en/))
@@ -45,7 +46,7 @@ You can run the following to be sure you have the necessary prerequisites to bui
 cordova requirements
 ```
 
-##To run / test in the Simulator:
+## To run / test in the Simulator:
 1. `cd pool-watcher`
 2. `cordova platform add ios`
 3. `cordova run ios --target="iPhone-X"`
