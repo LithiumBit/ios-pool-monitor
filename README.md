@@ -22,10 +22,9 @@ Currently the app supports the following pools:
 * [auspool.turtleco.in](http://auspool.turtleco.in)
 * [pool.turtleco.in](http://pool.turtleco.in)
 * [trtlpool.ninja](http://trtlpool.ninja)
-* [pool.trtl.me](http://pool.trtl.me)
+* [mine.tortugamor.cf](http://mine.tortugamor.cf)
 * [cryptoknight.cc](http://cryptoknight.cc)
 * [trtl.ninja](http://trtl.ninja)
-* [sewer.ninja](http://sewer.ninja)
 * [turtlecoinpool.ml](http://turtlecoinpool.ml)
 
 -------------------------
