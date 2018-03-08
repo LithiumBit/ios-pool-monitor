@@ -28,6 +28,10 @@ Currently the app supports the following pools:
 * [turtlecoinpool.ml](http://turtlecoinpool.ml)
 * [trtl.mine2gether.com](http://trtl.mine2gether.com)
 
+## Changelog
+
+[See here.](https://github.com/derp-derp-derp/Turtle-Coin-Pool-Watcher/blob/master/CHANGELOG.md)
+
 -------------------------
 
 # Build Steps
