@@ -26,6 +26,7 @@ Currently the app supports the following pools:
 * [cryptoknight.cc](http://cryptoknight.cc)
 * [trtl.ninja](http://trtl.ninja)
 * [turtlecoinpool.ml](http://turtlecoinpool.ml)
+* [trtl.mine2gether.com](http://trtl.mine2gether.com)
 
 -------------------------
 
