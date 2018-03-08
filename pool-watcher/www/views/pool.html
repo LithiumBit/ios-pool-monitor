@@ -8,15 +8,15 @@
     <div style="clear: both;"></div>
     
     <div id="tab_bar">
-        <a ng-href="#/dashboard/{{pool_encoded}}/{{wallet_address}}" ng-class="getClass('/dashboard')">Dashboard</a>
-        <a ng-href="#/pool/{{pool_encoded}}/{{wallet_address}}" ng-class="getClass('/pool')">Pool</a>
-        <a ng-href="#/payouts/{{pool_encoded}}/{{wallet_address}}" ng-class="getClass('/payouts')">Payouts</a>
+        <a ng-href="#!/dashboard/{{pool_encoded}}/{{wallet_address}}" ng-class="getClass('/dashboard')">Dashboard</a>
+        <a ng-href="#!/pool/{{pool_encoded}}/{{wallet_address}}" ng-class="getClass('/pool')">Pool</a>
+        <a ng-href="#!/payouts/{{pool_encoded}}/{{wallet_address}}" ng-class="getClass('/payouts')">Payouts</a>
     </div>
 
 </div>
 
 <div id="context_menu" ng-hide="loading">
-    <a href="#/home?reset=address">Change Pool or Wallet Address</a>
+    <a href="#!/home?reset=address">Change Pool or Wallet Address</a>
 </div>
 
 <div class="loading" ng-show="loading">Loading&#8230;</div>
