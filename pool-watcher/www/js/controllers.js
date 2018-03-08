@@ -111,7 +111,7 @@ angular.module('tc.controllers', [])
             
             if(stats.error == "pool api down")
             {
-                $scope.custom_error = "No net. connection or " + poolInfo[0] + " API is down.";
+                $scope.custom_error = "Bad connection or " + poolInfo[0] + " API is down.";
             }
         }
         else
@@ -176,7 +176,7 @@ angular.module('tc.controllers', [])
             
             if(stats.error == "pool api down")
             {
-                $scope.custom_error = "No net. connection or " + poolInfo[0] + " API is down.";
+                $scope.custom_error = "Bad connection or " + poolInfo[0] + " API is down.";
             }
         }
         else
@@ -234,7 +234,7 @@ angular.module('tc.controllers', [])
             
             if(stats.error == "pool api down")
             {
-                $scope.custom_error = "No net. connection or " + poolInfo[0] + " API is down.";
+                $scope.custom_error = "Bad connection or " + poolInfo[0] + " API is down.";
             }
         }
         else
