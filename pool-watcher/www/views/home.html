@@ -1,30 +1,23 @@
 <div id="homeContainer">
 
     <img src="img/home-logo.png" width="256" id="mainLogo">
-    
-    <div class="RobotoBold titleText">Select your pool</span><br><br>
-    <select class="Roboto" id="poolApiUrl">
-        <option value="us.turtlepool.space|http://us.turtlepool.space/api/" class="Roboto">us.turtlepool.space</option>
-        <option value="z-pool.com|https://z-pool.com/api/" class="Roboto">z-pool.com</option>
-        <option value="slowandsteady.fun|http://slowandsteady.fun:8119/" class="Roboto">slowandsteady.fun</option>
-        <option value="eu.turtlepool.space|http://eu.turtlepool.space/api/" class="Roboto">eu.turtlepool.space</option>
-        <option value="hk.turtlepool.space|http://hk.turtlepool.space/api/" class="Roboto">hk.turtlepool.space</option>
-        <option value="ny.minetrtl.us|http://ny.minetrtl.us:8117/" class="Roboto">ny.minetrtl.us</option>
-        <option value="auspool.turtleco.in|http://auspool.turtleco.in/api/" class="Roboto">auspool.turtleco.in</option>
-        <option value="pool.turtleco.in|http://us.turtlepool.space/api/" class="Roboto">pool.turtleco.in</option>
-        <option value="trtlpool.ninja|http://trtlpool.ninja/api/" class="Roboto">trtlpool.ninja</option>
-        <option value="mine.tortugamor.cf|http://tortugamor.cf:8117/" class="Roboto">mine.tortugamor.cf</option>
-        <option value="cryptoknight.cc|http://78.46.85.142:6229/" class="Roboto">cryptoknight.cc</option>
-        <option value="trtl.ninja|https://trtl.ninja/api/" class="Roboto">trtl.ninja</option>
-        <option value="turtlecoinpool.ml|https://turtlecoinpool.ml:8443/" class="Roboto">turtlecoinpool.ml</option>
-        <option value="trtl.mine2gether.com|https://trtl.mine2gether.com/api/" class="Roboto">trtl.mine2gether.com</option>
-    </select>
-    <br><br>
-        
-    <div class="RobotoBold titleText">Enter your wallet address</span><br><br>
-        
-    <input id="walletAddress" type="text" onblur="if (this.value == ''){this.value='Wallet address'}" onfocus="this.value=''" value="Wallet address" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><br><br>
-    
-    <img src="./img/home-go-button.png" id="submitPool" height="36">
+
+    <div class="RobotoBold titleText">
+        <span>Select your pool</span><br><br>
+
+        <select class="Roboto" id="poolApiUrl" />
+
+        <br><br>
+
+        <div class="RobotoBold titleText">
+            <span>Enter your wallet address</span><br><br>
+
+            <input id="walletAddress" type="text" onblur="if (this.value == ''){this.value='Wallet address'}" onfocus="this.value=''" value="Wallet address" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><br><br>
+
+            <img src="./img/home-go-button.png" id="submitPool" height="36">
+
+        </div>
+
+    </div>
 
 </div>

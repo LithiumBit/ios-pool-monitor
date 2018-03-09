@@ -10,6 +10,19 @@ angular.module('tc.controllers', [])
     var storage_selected_pool_index = storage.getItem('selected_pool_index');
     var wallet_input = $('#walletAddress');
     var pool_input = $('#poolApiUrl');
+
+    var doUpdatePools = function () {   
+        $.ajaxSetup({ cache: false });
+        // TODO: You'll want to change this to the main repo or host somewhere else.
+        $.getJSON('https://raw.githubusercontent.com/hensleyrob/ios-pool-monitor/master/pools.json', function (data) {
+            $.each(data, function (key, value) {
+                pool_input.append('<option value="' + key + '|' + value.url + '">' + key + '</option>');
+            });
+        });
+    };
+
+    doUpdatePools();
+
     var sendToDashboard = function(wallet, pool, apply=null)
     {
         var full_path = '/dashboard/' + pool + '/' + wallet;
