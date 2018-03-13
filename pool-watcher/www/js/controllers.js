@@ -13,8 +13,7 @@ angular.module('tc.controllers', [])
 
     var doUpdatePools = function () {   
         $.ajaxSetup({ cache: false });
-        // TODO: You'll want to change this to the main repo or host somewhere else.
-        $.getJSON('https://raw.githubusercontent.com/hensleyrob/ios-pool-monitor/master/pools.json', function (data) {
+        $.getJSON('https://raw.githubusercontent.com/turtlecoin/ios-pool-monitor/master/pools.json', function (data) {
             $.each(data, function (key, value) {
                 pool_input.append('<option value="' + key + '|' + value.url + '">' + key + '</option>');
             });
@@ -135,9 +134,16 @@ angular.module('tc.controllers', [])
             $scope.paid_formatted = (Number(stats.stats.paid) / 100).toFixed(2);
             $scope.balance_formatted = (Number(stats.stats.balance) / 100).toFixed(2);
             $scope.last_share = $filter('timeAgo')(stats.stats.lastShare);
-            $scope.hashrate_chart = stats.charts.hashrate;
             
-            hashChartService.doChart(stats.charts.hashrate);
+            if(stats.hasOwnProperty('charts'))
+            {
+                $scope.hashrate_chart = stats.charts.hashrate;
+                hashChartService.doChart(stats.charts.hashrate);
+            }
+            else
+            {
+                $scope.hashrate_chart = 0;
+            }
         }
         
         $scope.loading = false;
