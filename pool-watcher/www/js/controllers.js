@@ -13,8 +13,7 @@ angular.module('tc.controllers', [])
 
     var doUpdatePools = function () {   
         $.ajaxSetup({ cache: false });
-        // TODO: You'll want to change this to the main repo or host somewhere else.
-        $.getJSON('https://raw.githubusercontent.com/hensleyrob/ios-pool-monitor/master/pools.json', function (data) {
+        $.getJSON('https://raw.githubusercontent.com/turtlecoin/ios-pool-monitor/master/pools.json', function (data) {
             $.each(data, function (key, value) {
                 pool_input.append('<option value="' + key + '|' + value.url + '">' + key + '</option>');
             });
