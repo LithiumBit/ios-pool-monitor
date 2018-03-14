@@ -2,17 +2,20 @@
 	"us.turtlepool.space" : {
 		"url" : "http://us.turtlepool.space/api/"
 	},
-	"z-pool.com" : {
-		"url" : "https://z-pool.com/api/"
-	},
-	"slowandsteady.fun" : {
-		"url" : "http://slowandsteady.fun:8119/"
-	},
 	"eu.turtlepool.space" : {
 		"url" : "http://eu.turtlepool.space/api/"
 	},
 	"hk.turtlepool.space" : {
 		"url" : "http://hk.turtlepool.space/api/"
+	},
+	"trtl.mine2gether.com" : {
+		"url" : "https://trtl.mine2gether.com/api/"
+	},
+	"z-pool.com" : {
+		"url" : "https://z-pool.com/api/"
+	},
+	"slowandsteady.fun" : {
+		"url" : "http://slowandsteady.fun:8119/"
 	},
 	"ny.minetrtl.us" : {
 		"url" : "http://ny.minetrtl.us:8117/"
@@ -37,8 +40,5 @@
 	},
 	"turtlecoinpool.ml" : {
 		"url" : "https://turtlecoinpool.ml:8443/"
-	},
-	"trtl.mine2gether.com" : {
-		"url" : "https://trtl.mine2gether.com/api/"
 	}
 }
