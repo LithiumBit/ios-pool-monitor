@@ -8,6 +8,7 @@ angular.module('tc.controllers', [])
     var storage_wallet_address = storage.getItem('wallet_address');
     var storage_selected_pool = storage.getItem('selected_pool');
     var storage_selected_pool_index = storage.getItem('selected_pool_index');
+    var storage_selected_pool_name = storage.getItem('selected_pool_name');
     var wallet_input = $('#walletAddress');
     var pool_input = $('#poolApiUrl');
 
@@ -15,7 +16,13 @@ angular.module('tc.controllers', [])
         $.ajaxSetup({ cache: false });
         $.getJSON('https://raw.githubusercontent.com/turtlecoin/ios-pool-monitor/master/pools.json', function (data) {
             $.each(data, function (key, value) {
-                pool_input.append('<option value="' + key + '|' + value.url + '">' + key + '</option>');
+                var selected = '';
+
+                if (key == storage_selected_pool_name) {
+                    selected = 'selected';
+                }
+
+                pool_input.append('<option value="' + key + '|' + value.url + '" ' + selected + '>' + key + '</option>');
             });
         });
     };
@@ -62,17 +69,6 @@ angular.module('tc.controllers', [])
         wallet_input.val(storage_wallet_address);
     }
     
-    if(!storage_selected_pool_index)
-    {
-        // select first entry in the list of pools by default
-        pool_input.children().eq(0).prop('selected', true);
-    }
-    else
-    {
-        // select previously selected pool
-        pool_input.children().eq(storage_selected_pool_index).prop('selected', true);
-    }
-    
     var doSubmitPool = function() {
         var pool = btoa(pool_input.val());
         var wallet_address = wallet_input.val();
@@ -82,6 +78,10 @@ angular.module('tc.controllers', [])
             storage.setItem('wallet_address', wallet_address);
             storage.setItem('selected_pool', pool_input.val());
             storage.setItem('selected_pool_index', pool_input[0].selectedIndex);
+
+            var opt = pool_input[0].options[pool_input[0].selectedIndex];
+
+            storage.setItem('selected_pool_name', opt.text);
             
             sendToDashboard(wallet_address, pool, true);
         }
