@@ -14,7 +14,7 @@ angular.module('tc.controllers', [])
 
     var doUpdatePools = function () {   
         $.ajaxSetup({ cache: false });
-        $.getJSON('https://raw.githubusercontent.com/turtlecoin/ios-pool-monitor/master/pools.json', function (data) {
+        $.getJSON('https://raw.githubusercontent.com/turtlecoin/turtlecoin-pools-json/master/turtlecoin-pools.json', function (data) {
             $.each(data, function (key, value) {
                 var selected = '';
 
