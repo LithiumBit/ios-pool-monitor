@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.0.3] - March 21st, 2018
+
+### Changed
+- Loading indicator is now an animated TurtleCoin logo shell
+- Remote pools list JSON URL pointed to central version to unify among multiple apps
+
 ## [1.0.2] - March 14th, 2018
 ### Added
 - Remote pools list management for faster updates
