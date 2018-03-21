@@ -11,6 +11,7 @@ angular.module('tc.controllers', [])
     var storage_selected_pool_name = storage.getItem('selected_pool_name');
     var wallet_input = $('#walletAddress');
     var pool_input = $('#poolApiUrl');
+    $scope.loading = true;
 
     var doUpdatePools = function () {   
         $.ajaxSetup({ cache: false });
@@ -25,6 +26,7 @@ angular.module('tc.controllers', [])
                 pool_input.append('<option value="' + key + '|' + value.url + '" ' + selected + '>' + key + '</option>');
             });
         });
+        $scope.loading = false;
     };
 
     doUpdatePools();
