@@ -155,16 +155,6 @@ angular.module('tc.controllers', [])
         }
         
         $scope.loading = false;
-        
-        var $context_menu = $('#context_menu');
-        $context_menu.hide();
-        
-        $('#context_menu_toggle').on('click', function(){
-            $context_menu.show();
-            setTimeout(function() {
-                $context_menu.hide();
-            }, 3000);
-        });
     });
     
     $scope.timer = $timeout(function() {
@@ -220,17 +210,7 @@ angular.module('tc.controllers', [])
             
             hashChartService.doChart(stats.charts.hashrate);
         }
-        
-        var $context_menu = $('#context_menu');
-        $context_menu.hide();
-        
-        $('#context_menu_toggle').on('click', function(){
-            $context_menu.show();
-            setTimeout(function() {
-                $context_menu.hide();
-            }, 3000);
-        });
-    
+
         $scope.loading = false;
     });
     
@@ -289,16 +269,6 @@ angular.module('tc.controllers', [])
             
             $scope.miner_payments = minerPayments;
         }
-        
-        var $context_menu = $('#context_menu');
-        $context_menu.hide();
-        
-        $('#context_menu_toggle').on('click', function(){
-            $context_menu.show();
-            setTimeout(function() {
-                $context_menu.hide();
-            }, 3000);
-        });
     
         $scope.loading = false;
     });
