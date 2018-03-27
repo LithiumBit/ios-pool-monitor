@@ -136,6 +136,12 @@ angular.module('tc.controllers', [])
             $scope.paid_formatted = (Number(stats.stats.paid) / 100).toFixed(2);
             $scope.balance_formatted = (Number(stats.stats.balance) / 100).toFixed(2);
             $scope.last_share = $filter('timeAgo')(stats.stats.lastShare);
+            $scope.last_payment = null;
+            
+            if(stats.payments.length > 0)
+            {
+                $scope.last_payment = $filter('timeAgo')(stats.payments[1]);
+            }
             
             if(stats.hasOwnProperty('charts'))
             {

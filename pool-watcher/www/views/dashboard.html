@@ -63,6 +63,16 @@
         </div>
         
         <div class="content_card">
+            <strong>Last Payment</strong><br>
+            <span ng-show="last_payment">
+                {{last_payment}}
+            </span>
+            <span ng-show="!last_payment">
+                No payments yet from this pool.
+            </span>
+        </div>
+        
+        <div class="content_card">
             <strong>Last Share</strong><br>
             <span ng-show="miner_stats.lastShare > 1">
                 {{last_share}}
