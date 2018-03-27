@@ -1,0 +1,24 @@
+<div id="header">
+    
+    <div id="title_string"><img src="img/TRTL.png" id="title_logo"> <strong>Pool Monitor</strong></div>
+    <div id="main_menu_icons">
+        <div id="dots_icon"><img src="img/dot-icon.png" height="25" width="25" id="context_menu_toggle"></div>
+        <div id="refresh_icon"><a href="javascript:location.reload();"><img src="img/refresh-icon.png" height="25" width="25"></a></div>
+    </div>
+    <div style="clear: both;"></div>
+    
+    <div id="tab_bar">
+        <a ng-href="#!/dashboard/{{pool_encoded}}/{{wallet_address}}" ng-class="getClass('/dashboard')">Dashboard</a>
+        <a ng-href="#!/pool/{{pool_encoded}}/{{wallet_address}}" ng-class="getClass('/pool')">Pool</a>
+        <a ng-href="#!/payouts/{{pool_encoded}}/{{wallet_address}}" ng-class="getClass('/payouts')">Payouts</a>
+    </div>
+
+</div>
+
+<div id="context_menu" ng-hide="loading">
+    <a href="#!/home?reset=address">Change Pool or Wallet Address</a>
+</div>
+
+    <div class="loading" ng-show="loading">
+        <img src="img/turtle_shield_animate.svg" width="108" height="134" id="loading_shell">
+    </div>
