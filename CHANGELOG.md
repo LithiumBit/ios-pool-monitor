@@ -1,6 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.0.4] - March 27th, 2018
+
+### Added
+- Last pool payment timestamp now available on the Dashboard
+
+### Changed
+- Code cleanup / refactoring for header template
+
 ## [1.0.3] - March 21st, 2018
 
 ### Changed
