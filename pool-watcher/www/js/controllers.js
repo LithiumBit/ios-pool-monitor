@@ -15,15 +15,16 @@ angular.module('tc.controllers', [])
 
     var doUpdatePools = function () {   
         $.ajaxSetup({ cache: false });
-        $.getJSON('https://raw.githubusercontent.com/turtlecoin/turtlecoin-pools-json/master/turtlecoin-pools.json', function (data) {
-            $.each(data, function (key, value) {
+        $.getJSON('https://raw.githubusercontent.com/turtlecoin/turtlecoin-pools-json/master/v2/turtlecoin-pools.json', function (data) {
+            $.each(data.pools, function (index, pool) {
+                
                 var selected = '';
-
-                if (key == storage_selected_pool_name) {
+                
+                if (pool.name == storage_selected_pool_name) {
                     selected = 'selected';
                 }
-
-                pool_input.append('<option value="' + key + '|' + value.url + '" ' + selected + '>' + key + '</option>');
+                
+                pool_input.append('<option value="' + pool.name + '|' + pool.api + '" ' + selected + '>' + pool.name + '</option>');
             });
         });
         $scope.loading = false;
