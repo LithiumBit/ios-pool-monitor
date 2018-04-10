@@ -24,7 +24,9 @@ angular.module('tc.controllers', [])
                     selected = 'selected';
                 }
                 
-                pool_input.append('<option value="' + pool.name + '|' + pool.api + '" ' + selected + '>' + pool.name + '</option>');
+                if (pool.type == "forknote") {
+                    pool_input.append('<option value="' + pool.name + '|' + pool.api + '" ' + selected + '>' + pool.name + '</option>');
+                }
             });
         });
         $scope.loading = false;
