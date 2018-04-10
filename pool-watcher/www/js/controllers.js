@@ -208,6 +208,8 @@ angular.module('tc.controllers', [])
             $scope.min_payment = $filter('formatTRTL')(stats.config.minPaymentThreshold);
             $scope.block_reward = $filter('formatTRTL')(stats.network.reward);
             $scope.pool_hashrate = $filter('hashrateFormat')(stats.pool.hashrate);
+            $scope.last_block_found = $filter('timeAgo')(stats.pool.lastBlockFound / 1000);
+            $scope.avg_block = $filter('getReadableTime')(stats.network.difficulty / stats.pool.hashrate);
             
             hashChartService.doChart(stats.charts.hashrate);
         }
