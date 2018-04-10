@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.0.6] - April 10th, 2018
+
+### Changed
+- Only list Forknote pools (per now also having Node.js pools in the remote pools list)
+
 ## [1.0.5] - April 9th, 2018
 
 ### Added
