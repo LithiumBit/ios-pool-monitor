@@ -1,6 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.0.5] - April 9th, 2018
+
+### Added
+- Pools screen now has last block found time and estimated average block found time
+
+### Changed
+- Ported pools list to new turtlecoin-pools-json v2
+
 ## [1.0.4] - March 27th, 2018
 
 ### Added
