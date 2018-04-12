@@ -12,7 +12,7 @@ Features:
 
 [![Available on the App Store](https://devimages-cdn.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg)](https://itunes.apple.com/us/app/turtlecoin-mining-pool-monitor/id1353746147?ls=1&mt=8)
 
-[![Get it on Google Play](https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png | height=40)](https://play.google.com/store/apps/details?id=lol.turtlecoin.poolwatcher&hl=en)
+<a href="https://play.google.com/store/apps/details?id=lol.turtlecoin.poolwatcher&hl=en" target="_blank"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" height="40"></a>
 
 ## List of Pools Supported
 Currently the app supports all of the pools listed here, where type is 'forknote':
