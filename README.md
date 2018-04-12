@@ -13,22 +13,9 @@ Features:
 [![Available on the App Store](https://devimages-cdn.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg)](https://itunes.apple.com/us/app/turtlecoin-mining-pool-monitor/id1353746147?ls=1&mt=8)
 
 ## List of Pools Supported
-Currently the app supports the following pools:
+Currently the app supports all of the pools listed here, where type is 'forknote':
 
-* [us.turtlepool.space](http://us.turtlepool.space)
-* [z-pool.com](http://z-pool.com)
-* [slowandsteady.fun](http://slowandsteady.fun)
-* [eu.turtlepool.space](http://eu.turtlepool.space)
-* [hk.turtlepool.space](http://hk.turtlepool.space)
-* [ny.minetrtl.us](http://ny.minetrtl.us)
-* [auspool.turtleco.in](http://auspool.turtleco.in)
-* [pool.turtleco.in](http://pool.turtleco.in)
-* [trtlpool.ninja](http://trtlpool.ninja)
-* [mine.tortugamor.cf](http://mine.tortugamor.cf)
-* [cryptoknight.cc](http://cryptoknight.cc)
-* [trtl.ninja](http://trtl.ninja)
-* [turtlecoinpool.ml](http://turtlecoinpool.ml)
-* [trtl.mine2gether.com](http://trtl.mine2gether.com)
+[https://github.com/turtlecoin/turtlecoin-pools-json/blob/master/v2/turtlecoin-pools.json](https://github.com/turtlecoin/turtlecoin-pools-json/blob/master/v2/turtlecoin-pools.json)
 
 ## Changelog
 
@@ -108,5 +95,5 @@ This project is licensed under the GNU LGPL - see the [LICENSE](https://github.c
 
 * [Forknote Pool & Pool API Software](https://github.com/forknote/forknote-pool)
 * The Entire Turtle Coin Community
-* Aditya Gupta & Hemant Joshi - Developers of [Pool Watcher for Android](https://github.com/turtlecoin/android-pool-monitor)
+* Aditya Gupta & Hemant Joshi - Developers of the original [Pool Watcher for Android](https://github.com/turtlecoin/android-pool-monitor)
 * [hensleyrob](https://github.com/hensleyrob)
