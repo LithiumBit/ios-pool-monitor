@@ -12,6 +12,7 @@
 .AppleDB
 .AppleDesktop
 .apdisk
+build.json
 
 # Windows
 ehthumbs.db

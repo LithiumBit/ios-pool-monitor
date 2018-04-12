@@ -18,11 +18,21 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
+        <icon density="ldpi" src="res/icon/android/ldpi-36x36.png" />
+        <icon density="mdpi" src="res/icon/android/mdpi-48x48.png" />
+        <icon density="hdpi" src="res/icon/android/hdpi-72x72.png" />
+        <icon density="xhdpi" src="res/icon/android/xhdpi-96x96.png" />
+        <icon density="xxhdpi" src="res/icon/android/xxhdpi-144x144.png" />
+        <icon density="xxxhdpi" src="res/icon/android/xxxhdpi-192x192.png" />
+        <splash density="port-hdpi" src="res/screen/android/hdpi.png" />
+        <splash density="port-ldpi" src="res/screen/android/ldpi.png" />
+        <splash density="port-mdpi" src="res/screen/android/mdpi.png" />
+        <splash density="port-xhdpi" src="res/screen/android/xhdpi.png" />
+        <splash density="port-xxhdpi" src="res/screen/android/xxhdpi.png" />
+        <splash density="port-xxxhdpi" src="res/screen/android/xxxhdpi.png" />
     </platform>
     <platform name="ios">
-        <preference name="orientation" value="portrait" />
         <preference name="target-device" value="universal" />
-        <preference name="fullscreen" value="true" />
         <preference name="StatusBarStyle" value="lightcontent" />
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
@@ -45,7 +55,10 @@
         <icon gap:platform="ios" height="167" src="res/icon/ios/AppIcon-83.5x83.5@2x.png" width="167" />
         <icon gap:platform="ios" height="1024" src="res/icon/ios/AppIcon-1024@1x.png" width="1024" />
     </platform>
+    <preference name="fullscreen" value="true" />
+    <preference name="orientation" value="portrait" />
     <plugin name="cordova-plugin-statusbar" spec="^2.4.1" />
     <engine name="ios" spec="^4.5.4" />
     <engine name="browser" spec="^5.0.3" />
+    <engine name="android" spec="^7.0.0" />
 </widget>
