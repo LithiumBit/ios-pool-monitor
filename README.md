@@ -25,7 +25,7 @@ Currently the app supports all of the pools listed here, where type is 'forknote
 
 -------------------------
 
-# Build Steps
+# iOS Build Steps
 
 Some basics to get up and running to build and test on an iOS device.
 
@@ -55,11 +55,6 @@ cordova run ios --list
 
 ## Additional Notes
 
-You can also run the application in a web browser by using a local web server with the web root set to:
-```
-pool-watcher/www/
-```
-
 To build and/or run manually open this file in Xcode:
 ```
 pool-watcher/platforms/ios/TRTL Pools.xcodeproj
@@ -73,6 +68,13 @@ cordova build ios
 To propagate any changes in the app source and assets in www into the Xcode project file, run this command from pool-watcher/:
 ```
 cordova prepare
+```
+
+# Web Browser Build Steps
+
+You can also run the application in a web browser by using a local web server with the web root set to:
+```
+pool-watcher/www/
 ```
 
 -------------------------
