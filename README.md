@@ -25,57 +25,14 @@ Currently the app supports all of the pools listed here, where type is 'forknote
 
 -------------------------
 
-# iOS Build Steps
+# Build Steps
 
-Some basics to get up and running to build and test on an iOS device.
-
-## Prerequisites
- - Apple Xcode
- - Apple iOS Developer Account
- - Node.js ([nodejs.org/en/](https://nodejs.org/en/))
- - npm (if you installed Node.js using an .msi , .exe , .dmg .pkg , .deb or using a package installer like apt-get, yum or brew, then you'll have both node and npm)
- - Apache Cordova (also commonly referred to as PhoneGap) `sudo npm install -g cordova`
- - ios-deploy Node.js module `npm install -g ios-deploy`
- - CocoaPods `sudo gem install cocoapods`
-
-You can run the following to be sure you have the necessary prerequisites to build the project for iOS:
-```
-cordova requirements
-```
-
-## To run / test in the Simulator:
-1. `cd pool-watcher`
-2. `cordova platform add ios`
-3. `cordova run ios --target="iPhone-X"`
-
-You can use the following to see all available targets:
-```
-cordova run ios --list
-```
-
-## Additional Notes
-
-To build and/or run manually open this file in Xcode:
-```
-pool-watcher/platforms/ios/TRTL Pools.xcodeproj
-```
-
-You can build using the CLI with this command from pool-watcher/, but I haven't worked with it before:
-```
-cordova build ios
-```
-
-To propagate any changes in the app source and assets in www into the Xcode project file, run this command from pool-watcher/:
-```
-cordova prepare
-```
-
-# Web Browser Build Steps
-
-You can also run the application in a web browser by using a local web server with the web root set to:
+The easiest way to test the application is in the browser, by using a local web server with the web root set to:
 ```
 pool-watcher/www/
 ```
+
+For building to iOS or Android please refer to the [Apache Cordova documentation](https://cordova.apache.org/docs/en/latest/).
 
 -------------------------
 
