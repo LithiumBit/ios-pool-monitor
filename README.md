@@ -1,4 +1,4 @@
-# Pool Monitor
+# Pool Monitor (project in development phase) 
 
 An Apache Cordova & AngularJS application to monitor mining stats for all major TurtleCoin mining pools running CryptoNote.
 
