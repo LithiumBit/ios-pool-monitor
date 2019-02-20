@@ -5,7 +5,7 @@ An Apache Cordova & AngularJS application to monitor mining stats for all major 
 Using Pool Monitor you can get all the details regarding your TurtleCoin mining like hashrate, payments, and more.
 
 Features:
-* Easy. Just add your wallet address and, voil‡, you'll have all of the details.
+* Easy. Just add your wallet address and, voil√†, you'll have all of the details.
 * Reliable. Pool Monitor doesn't collect or save any data on your device.
 * Safe. All APIs used are safe and verified by multiple developers and miners.
 * Open source. Pool Monitor is free and open source, enabling anyone to verify its security by auditing the code.
@@ -17,7 +17,7 @@ Features:
 ## List of Pools Supported
 Currently the app supports all of the pools listed here, where type is 'forknote':
 
-[https://github.com/turtlecoin/turtlecoin-pools-json/blob/master/v2/turtlecoin-pools.json](https://github.com/turtlecoin/turtlecoin-pools-json/blob/master/v2/turtlecoin-pools.json)
+[https://github.com/LithiumBit/turtlecoin-pools-json/blob/master/v2/lbit-pools.json](https://github.com/LithiumBit/turtlecoin-pools-json/blob/master/v2/lbit-pools.json)
 
 ## Changelog
 
