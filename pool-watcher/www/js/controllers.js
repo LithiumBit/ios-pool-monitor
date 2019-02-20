@@ -14,8 +14,8 @@ angular.module('tc.controllers', [])
     $scope.loading = true;
 
     var doUpdatePools = function () {   
-        $.ajaxSetup({ cache: false });
-        $.getJSON('https://raw.githubusercontent.com/turtlecoin/turtlecoin-pools-json/master/v2/turtlecoin-pools.json', function (data) {
+        $.ajaxSetup({ cache: false });https://raw.githubusercontent.com/LithiumBit/turtlecoin-pools-json/master/v2/lbit-pools.json
+        $.getJSON('', function (data) {
             $.each(data.pools, function (index, pool) {
                 
                 var selected = '';
